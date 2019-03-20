@@ -12,4 +12,12 @@ public class BinarySearchTest {
         SearchResult searchResult = BinarySearch.search(key, seq);
         Assert.assertEquals(0, searchResult.getPosition());
     }
+
+    @Test public void searchTestElementNotExistingInSequence() {
+        int[] seq = {6};
+        int key = 7;
+
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        Assert.assertEquals(-1, searchResult.getPosition());
+    }
 }
