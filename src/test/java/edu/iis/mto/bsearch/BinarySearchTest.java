@@ -36,4 +36,12 @@ public class BinarySearchTest {
         SearchResult searchResult = BinarySearch.search(key, seq);
         Assert.assertEquals(seq.length -1, searchResult.getPosition());
     }
+
+    @Test public void searchTestElementExistingMiddleInSequence(){
+        int[] seq = {1,2,3};
+        int key = 2;
+
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        Assert.assertEquals((seq.length - 1) / 2, searchResult.getPosition());
+    }
 }
