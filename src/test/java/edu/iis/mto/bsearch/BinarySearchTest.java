@@ -28,4 +28,12 @@ public class BinarySearchTest {
         SearchResult searchResult = BinarySearch.search(key, seq);
         Assert.assertEquals(0, searchResult.getPosition());
     }
+
+    @Test public void searchTestElementExistingLastInSequence() {
+        int[] seq = {1,2,3,4};
+        int key = 4;
+
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        Assert.assertEquals(seq.length -1, searchResult.getPosition());
+    }
 }
