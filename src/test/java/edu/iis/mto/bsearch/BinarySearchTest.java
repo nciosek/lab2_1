@@ -13,7 +13,7 @@ public class BinarySearchTest {
         int key = 7;
 
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertEquals(0, searchResult.getPosition());
+        Assert.assertThat(0, is(equalTo(searchResult.getPosition())));
     }
 
     @Test public void searchTestElementNotExistingInSequence() {
@@ -21,7 +21,7 @@ public class BinarySearchTest {
         int key = 7;
 
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertEquals(-1, searchResult.getPosition());
+        Assert.assertThat(-1, is(equalTo(searchResult.getPosition())));
     }
 
     @Test public void searchTestElementExistingFirstInSequence() {
@@ -29,7 +29,7 @@ public class BinarySearchTest {
         int key = 1;
 
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertEquals(0, searchResult.getPosition());
+        Assert.assertThat(0, is(equalTo(searchResult.getPosition())));
     }
 
     @Test public void searchTestElementExistingLastInSequence() {
@@ -37,7 +37,7 @@ public class BinarySearchTest {
         int key = 4;
 
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertEquals(seq.length -1, searchResult.getPosition());
+        Assert.assertThat(seq.length - 1, is(equalTo(searchResult.getPosition())));
     }
 
     @Test public void searchTestElementExistingMiddleInSequence(){
@@ -45,7 +45,7 @@ public class BinarySearchTest {
         int key = 2;
 
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertEquals((seq.length - 1) / 2, searchResult.getPosition());
+        Assert.assertThat((seq.length - 1) / 2, is(equalTo(searchResult.getPosition())));
     }
 
     @Test public void searchTestElementIsNotExistingInSequence(){
