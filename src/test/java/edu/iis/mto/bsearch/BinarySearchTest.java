@@ -3,6 +3,9 @@ package edu.iis.mto.bsearch;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+
 public class BinarySearchTest {
 
     @Test public void searchTestElementExistingInSequence() {
@@ -46,10 +49,10 @@ public class BinarySearchTest {
     }
 
     @Test public void searchTestElementIsNotExistingInSequence(){
-        int[] seq = {1,2,3};
+        int[] seq = new int[0];
         int key = 7;
 
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertEquals(-1, searchResult.getPosition());
+        Assert.assertThat(-1, is(equalTo(searchResult.getPosition())));
     }
 }
